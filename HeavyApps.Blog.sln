@@ -12,6 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9DCFEB0D-71DC-4DB3-B1CF-7778711F0452}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{08CD6CCA-2788-4E77-B150-E1386DAC0428}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeavyApps.Blog.Api", "src\HeavyApps.Blog.Api\HeavyApps.Blog.Api.csproj", "{DB8057A6-D2C0-4646-B522-2C7C9128BEBE}"
 EndProject
