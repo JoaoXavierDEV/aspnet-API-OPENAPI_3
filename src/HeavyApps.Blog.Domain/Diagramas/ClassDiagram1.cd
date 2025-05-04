@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HeavyApps.Blog.Domain.Model.Autor">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAABAAAAAAAAACAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Autor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Posts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HeavyApps.Blog.Domain.Model.Post">
+    <Position X="3.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgAAAAEAAAAAAIgAAAAAABAAAAAAFAAAQAAQAgAABQ=</HashCode>
+      <FileName>Model\Post.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Autor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HeavyApps.Blog.Domain.Model.EntityBase">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Model\EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeavyApps.Blog.Domain.Model.EntityTeste" Collapsed="true">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Model\EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI Variable Text" Size="9" />
+</ClassDiagram>
