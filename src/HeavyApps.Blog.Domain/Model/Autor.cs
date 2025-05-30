@@ -1,14 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace HeavyApps.Blog.Domain.Model;
 public class Autor : EntityBase
 {
-    public string Nome { get; set; }
+    public virtual string Nome { get; set; }
+    public virtual string Email { get; set; }
+    public virtual string Biografia { get; set; }
+    public virtual List<Post> Posts { get; set; } = new List<Post>();
 
-    public List<Post> Posts { get; set; } = new List<Post>();
+    public Autor()
+    {
+
+    }
 
 }
