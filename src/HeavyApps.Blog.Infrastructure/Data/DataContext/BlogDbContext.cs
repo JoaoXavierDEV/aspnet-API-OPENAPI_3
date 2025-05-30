@@ -1,6 +1,5 @@
 ﻿using HeavyApps.Blog.Domain.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace HeavyApps.Blog.Infrastructure.Data.DataContext
 {
@@ -28,15 +27,15 @@ namespace HeavyApps.Blog.Infrastructure.Data.DataContext
             base.OnModelCreating(modelBuilder);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite(@"DataSource=app.db;Cache=Shared")
-                .EnableSensitiveDataLogging()
-            //.UseLazyLoadingProxies()
-            .LogTo(Console.WriteLine, LogLevel.Error);
-            //.LogTo(Console.WriteLine, new[] { RelationalEventId.CommandExecuted }, LogLevel.Information, DbContextLoggerOptions.LocalTime | DbContextLoggerOptions.SingleLine);
-            ;
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlite(@"DataSource=app.db;Cache=Shared")
+        //        .EnableSensitiveDataLogging()
+        //    //.UseLazyLoadingProxies()
+        //    .LogTo(Console.WriteLine, LogLevel.Error);
+        //    //.LogTo(Console.WriteLine, new[] { RelationalEventId.CommandExecuted }, LogLevel.Information, DbContextLoggerOptions.LocalTime | DbContextLoggerOptions.SingleLine);
+        //    ;
+        //}
 
 
         public DbSet<Post> Posts { get; set; }

@@ -11,4 +11,18 @@ public class Autor : EntityBase
 
     }
 
+    public Autor(string nome, string email, string biografia)
+    {
+        Nome = nome;
+        Email = email;
+        Biografia = biografia;
+    }
+
+    public Autor(string nome, string email, string biografia, List<Post> posts)
+    {
+        Nome = nome;
+        Email = email;
+        Biografia = biografia;
+        Posts = posts;
+    }
 }

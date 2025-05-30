@@ -10,38 +10,53 @@ namespace HeavyApps.Blog.Infrastructure.Data.Mappings
             builder.ToTable("Posts");
 
             builder.HasKey(p => p.ID);
+
             builder.Property(p => p.Titulo)
-                .IsRequired()
+                //.IsRequired()
                 .HasMaxLength(200);
+
             builder.Property(p => p.SubTitulo)
+
                 .HasMaxLength(200);
-            builder.Property(p => p.Corpo)
-                .IsRequired();
-            builder.Property(p => p.DataPublicacao)
-                .IsRequired()
-                .HasDefaultValueSql("CURRENT_TIMESTAMP");
-            builder.Property(p => p.Fonte)
-                .HasMaxLength(200);
+
+            builder.Property(p => p.Corpo);
+            //.IsRequired();
+
+            builder.Property(p => p.DataPublicacao);
+            //.IsRequired()
+            //.HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+            //builder.Property(p => p.Fonte)
+            //    .HasMaxLength(200);
+
             builder.HasOne(p => p.Autor)
                 .WithMany(a => a.Posts)
                 .HasForeignKey(p => p.AutorID);
-            builder.Property(p => p.Imagem)
-                .HasMaxLength(200);
-            builder.Property(p => p.Categoria)
-                .HasMaxLength(100);
-            builder.Property(p => p.Resumo)
-                .HasMaxLength(500);
-            builder.Property(p => p.Link)
-                .HasMaxLength(200);
+
+            //builder.Property(p => p.Imagem)
+            //    .HasMaxLength(200);
+
+            //builder.Property(p => p.Categoria)
+            //    .HasMaxLength(100);
+
+            //builder.Property(p => p.Resumo)
+            //    .HasMaxLength(500);
+
+            //builder.Property(p => p.Link)
+            //    .HasMaxLength(200);
+
             builder.Property(p => p.DataUltimaAtualizacao)
-                .IsRequired()
+                //.IsRequired()
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+            builder.Property(p => p.Likes)
+                .HasDefaultValue(0);
 
             builder.Property(p => p.Status)
                 .HasConversion(
                     v => StatusPostEnumConverter.ConvertToDatabaseValue(v),
-                    v => StatusPostEnumConverter.ConvertFromDatabaseValue(v))
-                .IsRequired();
+                    v => StatusPostEnumConverter.ConvertFromDatabaseValue(v));
+            //.IsRequired();
 
         }
     }

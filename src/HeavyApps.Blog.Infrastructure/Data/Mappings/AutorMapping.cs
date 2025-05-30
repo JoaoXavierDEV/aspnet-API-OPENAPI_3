@@ -16,7 +16,7 @@ namespace HeavyApps.Blog.Infrastructure.Data.Mappings
                 .HasMaxLength(100);
 
             builder.Property(a => a.Email)
-                .IsRequired()
+                //.IsRequired()
                 .HasMaxLength(100);
 
             builder.Property(a => a.Biografia)
