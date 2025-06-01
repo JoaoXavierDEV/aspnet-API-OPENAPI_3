@@ -53,23 +53,9 @@ namespace HeavyApps.Blog.Infrastructure.Data.Mappings
                 .HasDefaultValue(0);
 
             builder.Property(p => p.Status)
-                .HasConversion(
-                    v => StatusPostEnumConverter.ConvertToDatabaseValue(v),
-                    v => StatusPostEnumConverter.ConvertFromDatabaseValue(v));
-            //.IsRequired();
-
+                .HasConversion<string>();
+            
         }
     }
 
-    public class StatusPostEnumConverter
-    {
-        public static string ConvertToDatabaseValue(HeavyApps.Blog.Domain.Enum.StatusPostEnum status)
-        {
-            return status.ToString();
-        }
-        public static HeavyApps.Blog.Domain.Enum.StatusPostEnum ConvertFromDatabaseValue(string value)
-        {
-            return Enum.TryParse(value, out HeavyApps.Blog.Domain.Enum.StatusPostEnum status) ? status : HeavyApps.Blog.Domain.Enum.StatusPostEnum.Pendente;
-        }
-    }
 }

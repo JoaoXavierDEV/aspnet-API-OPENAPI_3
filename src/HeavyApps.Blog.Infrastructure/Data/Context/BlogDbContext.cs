@@ -1,7 +1,7 @@
 ﻿using HeavyApps.Blog.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace HeavyApps.Blog.Infrastructure.Data.DataContext
+namespace HeavyApps.Blog.Infrastructure.Data.Context
 {
     public class BlogDbContext : DbContext
     {

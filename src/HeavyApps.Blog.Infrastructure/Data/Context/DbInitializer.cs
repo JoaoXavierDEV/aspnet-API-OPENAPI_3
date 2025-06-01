@@ -1,6 +1,6 @@
 ﻿using HeavyApps.Blog.Domain.Model;
 
-namespace HeavyApps.Blog.Infrastructure.Data.DataContext;
+namespace HeavyApps.Blog.Infrastructure.Data.Context;
 
 public static class DbInitializer
 {
