@@ -1,19 +1,13 @@
+using HeavyApps.Blog.Presentation.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HeavyApps.Blog.Api.Controllers
+namespace HeavyApps.Blog.Api.Controllers.V1
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class PostsController : MainController
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public PostsController(ILogger<PostsController> logger)
         {
             _logger = logger;
         }
@@ -25,7 +19,6 @@ namespace HeavyApps.Blog.Api.Controllers
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
         }
