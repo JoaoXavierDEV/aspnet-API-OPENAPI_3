@@ -16,9 +16,6 @@ public static class DbInitializer
                         Corpo = "Conteúdo do primeiro post",
                         DataPublicacao = DateTime.Now,
                         Status = StatusPostEnum.Publicado,
-
-                        AutorID = 500
-
                     },
                     new Post
                     {
@@ -27,8 +24,6 @@ public static class DbInitializer
                         Corpo = "Conteúdo do segundo post",
                         DataPublicacao = DateTime.Now.AddDays(-80),
                         Status = StatusPostEnum.Rascunho,
-
-                        AutorID = 500
                     }
                 }},
             new Autor { ID = 98, Nome = "Alexandre", Email = "ale@gmail.com" },

@@ -11,8 +11,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("openapi3-database");
     options.UseSeeding((x, _) =>
     {
-        x.Set<Autor>().AddRange(DbInitializer.Autores);
-        x.SaveChanges();
+        var existeDados = x.Set<Autor>().Any(); // verificar se já tem dados na tabela Autor
+
+        if (!existeDados)
+        {
+            x.Set<Autor>().AddRange(DbInitializer.Autores);
+            x.SaveChanges();
+        }
+
     });
 });
 
