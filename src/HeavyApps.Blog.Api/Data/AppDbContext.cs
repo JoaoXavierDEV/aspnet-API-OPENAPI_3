@@ -15,13 +15,6 @@ public class AppDbContext : DbContext
     public DbSet<Post> Posts { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
-
-
-
-        //modelBuilder.Entity<Post>();
-
-
         modelBuilder.Entity<Post>()
             .HasOne(p => p.Autor)
             .WithMany(a => a.Posts)
@@ -29,8 +22,7 @@ public class AppDbContext : DbContext
 
         modelBuilder.Entity<Autor>()
             .HasMany(p => p.Posts)
-            .WithOne(a => a.Autor)
-            ;//.HasForeignKey
+            .WithOne(a => a.Autor);
 
         base.OnModelCreating(modelBuilder);
     }
