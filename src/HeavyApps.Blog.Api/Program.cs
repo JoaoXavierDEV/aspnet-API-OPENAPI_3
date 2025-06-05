@@ -1,10 +1,32 @@
+using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using OpenAPI3.Api.Data;
+using OpenAPI3.Api.Models;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services
-    .AddControllers()
-    .AddApplicationPart(typeof(HeavyApps.Blog.Presentation.Controllers.IAssemblyReferenceControllers).Assembly);
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseInMemoryDatabase("openapi3-database");
+    options.UseSeeding((x, _) =>
+    {
+        x.Set<Autor>().AddRange(DbInitializer.Autores);
+        x.SaveChanges();
+    });
+});
+
+
+// remover referências circulares do JSON
+// builder.Services.AddControllers()
+//     .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
+
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -18,6 +40,8 @@ builder.Services.AddOpenApi(options =>
 
 var app = builder.Build();
 
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -25,7 +49,7 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwaggerUI(opt =>
     {
-        opt.SwaggerEndpoint("/openapi/v1.json", "HeavyApps.Blog API V1");
+        opt.SwaggerEndpoint("/openapi/v1.json", "OepnAPI 3 API V1");
         //opt.RoutePrefix = "swagger"; // Set Swagger UI at the app's root
     });
 

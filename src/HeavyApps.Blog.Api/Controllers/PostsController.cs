@@ -1,26 +1,30 @@
-using HeavyApps.Blog.Presentation.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using OpenAPI3.Api.Data;
+using OpenAPI3.Api.Models;
 
-namespace HeavyApps.Blog.Api.Controllers.V1
+namespace OpenAPI3.Api.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+[Produces("application/json")]
+public class PostsController : Controller
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class PostsController : MainController
-    {
-        public PostsController(ILogger<PostsController> logger)
-        {
-            _logger = logger;
-        }
+    private readonly ILogger<PostsController> _logger;
+    private readonly AppDbContext appDbContext;
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-            })
-            .ToArray();
-        }
+    public PostsController(ILogger<PostsController> logger, AppDbContext appContext)
+    {
+        _logger = logger;
+        appDbContext = appContext;
+    }
+
+    [HttpGet(Name = "GetWeatherForecast")]
+    public IEnumerable<Post> GetPosts()
+    {
+        var posts = appDbContext.Posts.ToList();
+
+        var autores = appDbContext.Autores.ToList();
+
+        return posts;
     }
 }
