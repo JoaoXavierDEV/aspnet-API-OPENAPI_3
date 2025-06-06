@@ -45,12 +45,20 @@ Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP
 | Scalar     | [http://localhost:5000/docs/scalar](http://localhost:5000/docs/scalar)     |
 | Elements   | [http://localhost:5000/docs/elements](http://localhost:5000/docs/elements) |
 
-/src
-  └── ApiEstudos/
-      ├── Controllers/
-      ├── Documentation/
-      ├── Program.cs
-      └── ApiEstudos.csproj
+────HeavyApps.Blog.Api
+    ├───Controllers
+    ├───Data
+    ├───Models
+    ├───Pages
+    │   └───Docs
+    ├───Properties
+    └───wwwroot
+        ├───css
+        │   └───elements
+        ├───icons
+        │   └───APIdoc_files
+        └───js
+            └───elements
 
 📌 Notas Finais
 Este projeto é experimental e voltado exclusivamente para estudos pessoais.
