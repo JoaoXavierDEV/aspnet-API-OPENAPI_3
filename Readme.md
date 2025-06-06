@@ -1,7 +1,26 @@
 ﻿
 # Projeto de API para Estudos e Testes de Documentação
 
-Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP.NET 9** e experimentar diferentes formas de **documentação com OpenAPI 3**. A estrutura é inspirada no estilo do framework Flask (Python), proporcionando uma abordagem minimalista e flexível.
+Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP.NET 9** e experimentar diferentes formas de **documentação com OpenAPI 3**.
+
+ A estrutura é inspirada no estilo do framework Flask (Python), a qual exibe a pagína index com as opções de documentação, para isso foi necessário incluir o suporte a RazorPages para suportar a exibição de páginas *.cshtml
+```csharp
++ builder.Services.AddRazorPages();
+```
+
+```csharp
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
++ app.MapStaticAssets();
+
++ app.MapRazorPages();
+
+app.Run();
+```
 
 ![Image](https://github.com/user-attachments/assets/614564c0-03fb-49e3-bc92-7d8253010f2d)
 
@@ -14,7 +33,7 @@ Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP
 ## 🛠 Tecnologias Utilizadas
 
 - **ASP.NET Core 9**
-- **OpenAPI 3 (Swagger Specification)**
+- **OpenAPI 3**
 - **Interfaces de Documentação:**
   - Swagger UI
   - Redoc
@@ -26,89 +45,36 @@ Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP
 ## 🚀 Como Executar o Projeto
 
 1. Clone o repositório:
-   ```bash
+ ```bash
    git clone https://github.com/seu-usuario/nome-do-repo.git
-   cd nome-do-repo`
+   cd nome-do-repo
+   ```
 
 2.  **Restaure os pacotes:**
  ```csharp
- dotnet restore
+	dotnet restore
  ```
     
 3.  **Execute o projeto:**
-```csharp 
-dotnet run 
+ ```csharp
+	dotnet run 
 ```
 
    | Interface  | URL                                                                        |
 | ---------- | -------------------------------------------------------------------------- |
 | Swagger UI | [http://localhost:5000/swagger](http://localhost:5000/swagger)             |
-| Redoc      | [http://localhost:5000/docs/redoc](http://localhost:5000/docs/redoc)       |
+| Redoc      | [http://localhost:5000/api-docs/](http://localhost:5000/docs/redoc)       |
 | RapiDoc    | [http://localhost:5000/docs/rapidoc](http://localhost:5000/docs/rapidoc)   |
 | RapiPDF    | [http://localhost:5000/docs/rapipdf](http://localhost:5000/docs/rapipdf)   |
-| Scalar     | [http://localhost:5000/docs/scalar](http://localhost:5000/docs/scalar)     |
+| Scalar     | [http://localhost:5000/scalar](http://localhost:5000/docs/scalar)     |
 | Elements   | [http://localhost:5000/docs/elements](http://localhost:5000/docs/elements) |
 
-```
-HeavyApps.Blog.Api
-
-└───src
-    │
-    └───HeavyApps.Blog.Api
-        │
-        │   appsettings.json
-        │   OpenAPI3.Api.csproj
-        │   OpenAPI3.Api.csproj.user
-        │   Program.cs
-        │
-        ├───Controllers
-        │       AutorController.cs
-        │       PostsController.cs
-        │
-        ├───Data
-        │       AppDbContext.cs
-        │       DbInitializer.cs
-        │
-        ├───Models
-        │       Autor.cs
-        │       EntityBase.cs
-        │       Post.cs
-        │
-        ├───Pages
-        │   │   Index.cshtml
-        │   │   Index.cshtml.cs
-        │   │
-        │   └───Docs
-        │           Elements.cshtml
-        │           Elements.cshtml.cs
-        │           RapiDoc.cshtml
-        │           RapiDoc.cshtml.cs
-        │           RapiPdf.cshtml
-        │           RapiPdf.cshtml.cs
-        │
-        ├───Properties
-        │       launchSettings.json
-        │
-        └───wwwroot
-            ├───css
-            │   └───elements
-            │           styles.min.css
-            │
-            ├───icons
-            │   └───APIdoc_files
-            │           elements.svg
-            │           rapidoc.svg
-            │           rapipdf.svg
-            │           redoc.svg
-            │           scalar.svg
-            │           swagger.svg
-            │
-            └───js
-                └───elements
-                        web-components.min.js
-
-
-```
+/src
+  └── ApiEstudos/
+      ├── Controllers/
+      ├── Documentation/
+      ├── Program.cs
+      └── ApiEstudos.csproj
 
 📌 Notas Finais
 Este projeto é experimental e voltado exclusivamente para estudos pessoais.
