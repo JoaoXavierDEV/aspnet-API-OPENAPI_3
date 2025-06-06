@@ -45,6 +45,7 @@ Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP
 | Scalar     | [http://localhost:5000/docs/scalar](http://localhost:5000/docs/scalar)     |
 | Elements   | [http://localhost:5000/docs/elements](http://localhost:5000/docs/elements) |
 
+```
 HeavyApps.Blog.Api
     ├───Controllers
     │   ├───AutorController.cs
@@ -64,6 +65,8 @@ HeavyApps.Blog.Api
         ├───css
         ├───icons
         └───js
+
+```
 
 📌 Notas Finais
 Este projeto é experimental e voltado exclusivamente para estudos pessoais.
