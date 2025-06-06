@@ -31,10 +31,14 @@ Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP
    cd nome-do-repo`
 
 2.  **Restaure os pacotes:**
-    `dotnet restore` 
+ ```csharp
+ dotnet restore
+ ```
     
 3.  **Execute o projeto:**
-    `dotnet run`
+```csharp 
+dotnet run 
+```
 
    | Interface  | URL                                                                        |
 | ---------- | -------------------------------------------------------------------------- |
