@@ -46,8 +46,8 @@ app.Run();
 
 1. Clone o repositório:
  ```bash
-   git clone https://github.com/seu-usuario/nome-do-repo.git
-   cd nome-do-repo
+   git clone https://github.com/JoaoXavierDEV/aspnet-API-OPENAPI_3.git
+   cd aspnet-API-OPENAPI_3
    ```
 
 2.  **Restaure os pacotes:**
@@ -69,12 +69,65 @@ app.Run();
 | Scalar     | [http://localhost:5000/scalar](http://localhost:5000/docs/scalar)     |
 | Elements   | [http://localhost:5000/docs/elements](http://localhost:5000/docs/elements) |
 
-/src
-  └── ApiEstudos/
-      ├── Controllers/
-      ├── Documentation/
-      ├── Program.cs
-      └── ApiEstudos.csproj
+```
+HeavyApps.Blog.Api
+
+└───src
+    │
+    └───HeavyApps.Blog.Api
+        │   OpenAPI3.Api.csproj
+        │   OpenAPI3.Api.csproj.user
+        │   appsettings.json
+        │   Program.cs
+        │
+        ├───Controllers
+        │       AutorController.cs
+        │       PostsController.cs
+        │
+        ├───Data
+        │       AppDbContext.cs
+        │       DbInitializer.cs
+        │
+        ├───Models
+        │       Autor.cs
+        │       EntityBase.cs
+        │       Post.cs
+        │
+        ├───Pages
+        │   │   Index.cshtml
+        │   │   	└── Index.cshtml.cs
+        │   │
+        │   └───Docs
+        │           Elements.cshtml
+        │           	└── Elements.cshtml.cs
+        │           RapiDoc.cshtml
+        │           	└── RapiDoc.cshtml.cs
+        │           RapiPdf.cshtml
+        │           	└── RapiPdf.cshtml.cs
+        │
+        ├───Properties
+        │       launchSettings.json
+        │
+        └───wwwroot
+            ├───css
+            │   └───elements
+            │           styles.min.css
+            │
+            ├───icons
+            │   └───APIdoc_files
+            │           elements.svg
+            │           rapidoc.svg
+            │           rapipdf.svg
+            │           redoc.svg
+            │           scalar.svg
+            │           swagger.svg
+            │
+            └───js
+                └───elements
+                        web-components.min.js
+
+
+```
 
 📌 Notas Finais
 Este projeto é experimental e voltado exclusivamente para estudos pessoais.
