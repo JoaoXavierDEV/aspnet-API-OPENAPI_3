@@ -130,11 +130,11 @@ HeavyApps.Blog.Api
 ```
 
 📌 Notas Finais
+
 Este projeto é experimental e voltado exclusivamente para estudos pessoais.
 
-A ideia principal é entender o funcionamento e as possibilidades do ecossistema .NET com OpenAPI.
-
-Futuras extensões podem incluir autenticação JWT, versionamento de API, testes automatizados e deploy em nuvem.
+A ideia principal é entender o funcionamento e as possibilidades do ecossistema .NET com OpenAPI 3.
 
 ✍️ Autor
-Desenvolvido por Seu Nome — com foco em aprendizado, boas práticas e testes de documentação.
+
+Desenvolvido por João Xavier — com foco em aprendizado, boas práticas e testes de documentação.
