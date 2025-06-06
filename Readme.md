@@ -45,20 +45,25 @@ Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP
 | Scalar     | [http://localhost:5000/docs/scalar](http://localhost:5000/docs/scalar)     |
 | Elements   | [http://localhost:5000/docs/elements](http://localhost:5000/docs/elements) |
 
-────HeavyApps.Blog.Api
+HeavyApps.Blog.Api
     ├───Controllers
-    ├───Data
-    ├───Models
+    │   ├───AutorController.cs
+    │   └───PostsController.cs
+        ├───Data
+        │       AppDbContext.cs
+        │       DbInitializer.cs
+        │
+        ├───Models
+        │       Autor.cs
+        │       EntityBase.cs
+        │       Post.cs
     ├───Pages
     │   └───Docs
     ├───Properties
     └───wwwroot
         ├───css
-        │   └───elements
         ├───icons
-        │   └───APIdoc_files
         └───js
-            └───elements
 
 📌 Notas Finais
 Este projeto é experimental e voltado exclusivamente para estudos pessoais.
