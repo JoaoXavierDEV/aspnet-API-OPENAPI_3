@@ -47,9 +47,20 @@ Este projeto tem como objetivo estudar a criação de APIs REST utilizando **ASP
 
 ```
 HeavyApps.Blog.Api
-    ├───Controllers
-    │   ├───AutorController.cs
-    │   └───PostsController.cs
+
+└───src
+    │
+    └───HeavyApps.Blog.Api
+        │
+        │   appsettings.json
+        │   OpenAPI3.Api.csproj
+        │   OpenAPI3.Api.csproj.user
+        │   Program.cs
+        │
+        ├───Controllers
+        │       AutorController.cs
+        │       PostsController.cs
+        │
         ├───Data
         │       AppDbContext.cs
         │       DbInitializer.cs
@@ -58,13 +69,40 @@ HeavyApps.Blog.Api
         │       Autor.cs
         │       EntityBase.cs
         │       Post.cs
-    ├───Pages
-    │   └───Docs
-    ├───Properties
-    └───wwwroot
-        ├───css
-        ├───icons
-        └───js
+        │
+        ├───Pages
+        │   │   Index.cshtml
+        │   │   Index.cshtml.cs
+        │   │
+        │   └───Docs
+        │           Elements.cshtml
+        │           Elements.cshtml.cs
+        │           RapiDoc.cshtml
+        │           RapiDoc.cshtml.cs
+        │           RapiPdf.cshtml
+        │           RapiPdf.cshtml.cs
+        │
+        ├───Properties
+        │       launchSettings.json
+        │
+        └───wwwroot
+            ├───css
+            │   └───elements
+            │           styles.min.css
+            │
+            ├───icons
+            │   └───APIdoc_files
+            │           elements.svg
+            │           rapidoc.svg
+            │           rapipdf.svg
+            │           redoc.svg
+            │           scalar.svg
+            │           swagger.svg
+            │
+            └───js
+                └───elements
+                        web-components.min.js
+
 
 ```
 
